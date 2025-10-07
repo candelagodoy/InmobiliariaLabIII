@@ -31,7 +31,7 @@ public class LoginViewModel extends AndroidViewModel {
         if(usuario.equalsIgnoreCase("usuario") && clave.equalsIgnoreCase("123")){
             mLogin.setValue("");
         }else{
-            mMensaje.setValue("Usuario y/o clave incorrecta");
+            mMensaje.setValue("Usuario y/o clave incorrectas");
         }
     }
 
