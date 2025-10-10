@@ -36,13 +36,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        vModel.getMLogin().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         binding.btIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
