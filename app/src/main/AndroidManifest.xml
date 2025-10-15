@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InmobiliariaLabIII">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCkwqeXh9qhmxyYy65R1ul0cYMIQZ6hyZ8" />
 
         <activity
             android:name=".ui.login.LoginActivity"
