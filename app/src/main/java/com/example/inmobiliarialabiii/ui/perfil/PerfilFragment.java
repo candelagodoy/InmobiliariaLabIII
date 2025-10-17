@@ -34,6 +34,7 @@ public class PerfilFragment extends Fragment {
                 binding.etDniActualizar.setText(propietario.getDni());
                 binding.etEmailActualizar.setText(propietario.getEmail());
                 binding.etTelefonoActualizar.setText(propietario.getTelefono());
+
             }
         });
 
@@ -44,14 +45,27 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        mViewModel.getMMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                binding.tvMensajeEd.setText(s);
+            }
+        });
+
         mViewModel.getMEstado().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
+                binding.tvMensajeEd.setText("");
                 binding.etNombreActualizar.setEnabled(aBoolean);
+                binding.textInputNombre.setEnabled(aBoolean);
                 binding.etApellidoActualizar.setEnabled(aBoolean);
+                binding.textInputApellido.setEnabled(aBoolean);
                 binding.etDniActualizar.setEnabled(aBoolean);
+                binding.textInputDni.setEnabled(aBoolean);
                 binding.etEmailActualizar.setEnabled(aBoolean);
+                binding.textInputEmail.setEnabled(aBoolean);
                 binding.etTelefonoActualizar.setEnabled(aBoolean);
+                binding.textInputTelefono.setEnabled(aBoolean);
             }
         });
 
@@ -66,7 +80,8 @@ public class PerfilFragment extends Fragment {
                 String email = binding.etEmailActualizar.getText().toString();
                 String tel = binding.etTelefonoActualizar.getText().toString();
 
-                mViewModel.guardar(binding.btEditar.getText().toString()    , nom, ap, dni, tel, email);
+                mViewModel.guardar(binding.btEditar.getText().toString(), nom, ap, dni, tel, email);
+
             }
         });
 

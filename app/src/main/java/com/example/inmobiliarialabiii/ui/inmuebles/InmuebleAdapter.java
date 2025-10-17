@@ -44,7 +44,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
         holder.tvPrecio.setText(String.valueOf(iActual.getValor()));
         Glide.with(context)
                 .load(URLBASE + iActual.getImagen())
-                .placeholder(null)//puedo dejar una imagen por defecto
+                .placeholder(R.drawable.inmuebles)//puedo dejar una imagen por defecto
                 .error("null")//puedo colocar lo que quiero que aparezca cuando no se encontro la imagen
                 .into(holder.iInmueble);
 

@@ -33,30 +33,37 @@ public class LoginViewModel extends AndroidViewModel {
         ApiClient.InmobiliariaService api = ApiClient.getApiInmobiliaria();
         Call<String> llamada = api.login(mail, clave);
 
-        llamada.enqueue(new Callback<String>() {
-            @Override
-            //se ejecuta siempre que hay ua respuesta
-            public void onResponse(Call<String> call, Response<String> response) {
-                if(response.isSuccessful()){
-                    String token = response.body();
-                    ApiClient.guardarToken(getApplication(), token);
-                    mMensaje.postValue("Bienvenido"); // es post value porque está en un ámbito asincrono
-                    Intent intent = new Intent(getApplication(), MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    getApplication().startActivity(intent);
+        if(mail.isBlank()){
+            mMensaje.setValue("Debe ingresar un Email");
+        }
+        else if (clave.isBlank()){
+            mMensaje.setValue("Debe Ingresar la contraseña");
+        }
+        else{
+            llamada.enqueue(new Callback<String>() {
+                @Override
+                //se ejecuta siempre que hay una respuesta
+                public void onResponse(Call<String> call, Response<String> response) {
+                    if(response.isSuccessful()){
+                        String token = response.body();
+                        ApiClient.guardarToken(getApplication(), token);
+                        mMensaje.postValue("Bienvenido"); // es post value porque está en un ámbito asincrono
+                        Intent intent = new Intent(getApplication(), MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        getApplication().startActivity(intent);
+                    }
+                    else{
+                        mMensaje.postValue("Usuario y/o contraseña incorrectos");
+                    }
                 }
-                else{
-                    mMensaje.postValue("Usuario y/o contraseña incorrectos");
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    mMensaje.postValue("Error de servidor");
                 }
-            }
+            });
+        }
 
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                mMensaje.postValue("Error de servidor");
-            }
-
-
-        });
 
     }
 
