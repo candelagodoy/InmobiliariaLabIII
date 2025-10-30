@@ -11,9 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.inmobiliarialabiii.R;
 import com.example.inmobiliarialabiii.databinding.FragmentInmueblesBinding;
 import com.example.inmobiliarialabiii.model.Inmueble;
 
@@ -39,6 +41,12 @@ public class InmueblesFragment extends Fragment {
                 rv.setAdapter(adapter);
             }
         });
+
+        mViewModel.leerInmueble();
+
+        binding.fabAgregarInmueble.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_nav_inmuebles_to_cargarInmuebleFragment));
 
         return binding.getRoot();
     }
