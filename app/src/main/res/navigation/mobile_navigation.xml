@@ -21,7 +21,11 @@
         android:id="@+id/nav_inquilinos"
         android:name="com.example.inmobiliarialabiii.ui.inquilinos.InquilinosFragment"
         android:label="@string/inquilinos"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilinos_to_detalleInquilinoFragment"
+            app:destination="@id/detalleInquilinoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_inmuebles"
         android:name="com.example.inmobiliarialabiii.ui.inmuebles.InmueblesFragment"
@@ -61,5 +65,14 @@
         <action
             android:id="@+id/action_cargarInmuebleFragment_to_nav_inmuebles"
             app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInquilinoFragment"
+        android:name="com.example.inmobiliarialabiii.ui.inquilinos.DetalleInquilinoFragment"
+        android:label="fragment_detalle_inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino" >
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
     </fragment>
 </navigation>

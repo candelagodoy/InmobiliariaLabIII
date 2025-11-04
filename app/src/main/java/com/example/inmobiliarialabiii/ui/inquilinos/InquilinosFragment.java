@@ -1,5 +1,6 @@
 package com.example.inmobiliarialabiii.ui.inquilinos;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -7,16 +8,26 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inmobiliarialabiii.R;
+import com.example.inmobiliarialabiii.databinding.FragmentInmueblesBinding;
+import com.example.inmobiliarialabiii.databinding.FragmentInquilinosBinding;
+import com.example.inmobiliarialabiii.model.Inmueble;
+import com.example.inmobiliarialabiii.ui.inmuebles.InmuebleAdapter;
+import com.example.inmobiliarialabiii.ui.inmuebles.InmueblesViewModel;
+
+import java.util.List;
 
 public class InquilinosFragment extends Fragment {
 
     private InquilinosViewModel mViewModel;
+    private FragmentInquilinosBinding binding;
 
     public static InquilinosFragment newInstance() {
         return new InquilinosFragment();
@@ -25,7 +36,24 @@ public class InquilinosFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_inquilinos, container, false);
+        mViewModel = new ViewModelProvider(this).get(InquilinosViewModel.class);
+        binding = FragmentInquilinosBinding.inflate(inflater, container, false);
+
+        mViewModel.getMImuebleInquilinos().observe(getViewLifecycleOwner(), new Observer<List<Inmueble>>() {
+            @Override
+            public void onChanged(List<Inmueble> inmuebles) {
+                InmuebleAdapter2 adapter = new InmuebleAdapter2(inmuebles,getContext());
+                GridLayoutManager glm = new GridLayoutManager(getContext(), 2 );
+                RecyclerView rv = binding.rvInquilinos;
+                rv.setLayoutManager(glm);
+                rv.setAdapter(adapter);
+            }
+        });
+
+        mViewModel.leerInmuebleConContrato();
+
+        return binding.getRoot();
+
     }
 
     @Override

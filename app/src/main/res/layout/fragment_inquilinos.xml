@@ -6,9 +6,12 @@
     tools:context=".ui.inquilinos.InquilinosFragment"
     android:background="@drawable/inmobi">
 
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInquilinos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:clipToPadding="false"
+        android:padding="8dp" />
 
 </FrameLayout>

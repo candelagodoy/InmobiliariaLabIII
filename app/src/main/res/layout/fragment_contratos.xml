@@ -6,9 +6,8 @@
     tools:context=".ui.contratos.ContratosFragment"
     android:background="@drawable/inmobi">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

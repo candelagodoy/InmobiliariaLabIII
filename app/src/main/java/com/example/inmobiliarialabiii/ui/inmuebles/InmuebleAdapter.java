@@ -23,12 +23,8 @@ import com.example.inmobiliarialabiii.request.ApiClient;
 import java.util.List;
 
 public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.InmuebleViewHolder> {
-
     private List<Inmueble> lista;
     private Context context;
-
-
-
     public InmuebleAdapter(List<Inmueble> lista, Context context) {
         this.lista = lista;
         this.context = context;
