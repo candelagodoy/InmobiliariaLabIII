@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +49,16 @@ public class DetalleContratoFragment extends Fragment {
         });
 
         mViewModel.obtenerContrato(getArguments());
+
+        binding.btPagos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int idContrato = Integer.parseInt(binding.tvCodContrato.getText().toString());
+                Bundle bundle = new Bundle();
+                bundle.putInt("idContrato", idContrato);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.pagosFragment, bundle);
+            }
+        });
 
         return binding.getRoot();
     }

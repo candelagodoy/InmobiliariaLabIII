@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idCardPagos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#FFF8F6F4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="385dp"
+        android:layout_height="219dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvCodigoDePago"
+            android:layout_width="168dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="Codigo de pago:"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvImporte"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="Importe:"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCodigoDePago" />
+
+        <TextView
+            android:id="@+id/tvFechaDePago"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="Fecha de pago:"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvImporte" />
+
+        <TextView
+            android:id="@+id/tvCodigoDeContrato"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="Codigo de contrato:"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFechaDePago" />
+
+        <TextView
+            android:id="@+id/tvCodPagoSet"
+            android:layout_width="163dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:hint="cod pago"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCodigoDePago"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvImporteSet"
+            android:layout_width="164dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:hint="Importe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.672"
+            app:layout_constraintStart_toEndOf="@+id/tvImporte"
+            app:layout_constraintTop_toBottomOf="@+id/tvCodPagoSet" />
+
+        <TextView
+            android:id="@+id/tvFechaPagoSet"
+            android:layout_width="160dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="28dp"
+            android:hint="fecha pago"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.634"
+            app:layout_constraintStart_toEndOf="@+id/tvFechaDePago"
+            app:layout_constraintTop_toBottomOf="@+id/tvImporteSet" />
+
+        <TextView
+            android:id="@+id/tvCodContSet"
+            android:layout_width="158dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            android:hint="codigo contrato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toEndOf="@+id/tvCodigoDeContrato"
+            app:layout_constraintTop_toBottomOf="@+id/tvFechaPagoSet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
