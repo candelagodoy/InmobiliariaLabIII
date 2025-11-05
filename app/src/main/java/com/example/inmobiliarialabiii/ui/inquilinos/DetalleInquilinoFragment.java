@@ -23,7 +23,6 @@ public class DetalleInquilinoFragment extends Fragment {
 
     private DetalleInquilinoViewModel mViewModel;
     private FragmentDetalleInquilinoBinding binding;
-    private Inmueble inmueble;
 
     public static DetalleInquilinoFragment newInstance() {
         return new DetalleInquilinoFragment();
