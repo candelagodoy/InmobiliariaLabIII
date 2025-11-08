@@ -4,150 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/inmobi"
     tools:context=".ui.inmuebles.CargarInmuebleFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="14dp">
 
-        <TextView
-            android:id="@+id/tvAgregarInmueble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="AGREGAR INMUEBLE"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilDireccion"
-            android:layout_width="0dp"
+            android:id="@+id/inDireccion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvAgregarInmueble"
+            android:hint="Dirección"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Dirección">
+          >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDireccion"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:textColor="@color/grey2"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPrecio"
-            android:layout_width="0dp"
+            android:id="@+id/inPrecio"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tilDireccion"
+            android:layout_marginTop="12dp"
+            android:hint="Precio"
+            app:layout_constraintTop_toBottomOf="@id/inDireccion"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Precio">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPrecio"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="number"
                 android:textColor="@color/grey2"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilUso"
-            android:layout_width="0dp"
+            android:id="@+id/inUso"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tilPrecio"
+            android:layout_marginTop="12dp"
+            android:hint="Uso"
+            app:layout_constraintTop_toBottomOf="@id/inPrecio"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Uso">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUso"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:textColor="@color/grey2"
-                android:textSize="14sp"/>
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTipo"
-            android:layout_width="0dp"
+            android:id="@+id/inTipo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tilUso"
+            android:layout_marginTop="12dp"
+            android:hint="Tipo"
+            app:layout_constraintTop_toBottomOf="@id/inUso"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Tipo">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTipo"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:textColor="@color/grey2"
-                android:textSize="14sp"/>
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilSuperficie"
-            android:layout_width="0dp"
+            android:id="@+id/inSuperficie"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tilTipo"
+            android:layout_marginTop="12dp"
+            android:hint="Superficie"
+            app:layout_constraintTop_toBottomOf="@id/inTipo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Superficie">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSuperficie"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="number"
                 android:textColor="@color/grey2"
-                android:textSize="14sp"/>
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilAmbientes"
-            android:layout_width="0dp"
+            android:id="@+id/inAmbientes"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tilSuperficie"
+            android:layout_marginTop="12dp"
+            android:hint="Cantidad de ambientes"
+            app:layout_constraintTop_toBottomOf="@id/inSuperficie"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Cantidad de ambientes">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAmbientes"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="56dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="number"
                 android:textColor="@color/grey2"
-                android:textSize="14sp"/>
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/cbDisponible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="24dp"
             android:buttonTint="@color/grey2"
             android:text="Disponible"
             android:textColor="@color/grey2"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilAmbientes" />
+            app:layout_constraintTop_toBottomOf="@id/inAmbientes" />
 
         <ImageView
             android:id="@+id/ivInmueble"
@@ -157,18 +156,16 @@
             android:background="@drawable/bg_img_rounded"
             android:scaleType="centerCrop"
             android:src="@drawable/inmuebles"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.134"
+            app:layout_constraintEnd_toStartOf="@id/btAgregarFoto"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cbDisponible"
-            app:layout_constraintVertical_bias="0.201" />
+            app:layout_constraintTop_toBottomOf="@id/cbDisponible" />
 
         <Button
             android:id="@+id/btAgregarFoto"
             android:layout_width="185dp"
             android:layout_height="48dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="52dp"
             android:background="@drawable/button_background"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
@@ -176,7 +173,6 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
             app:layout_constraintStart_toEndOf="@id/ivInmueble"
             app:layout_constraintTop_toBottomOf="@id/cbDisponible" />
 
@@ -184,7 +180,7 @@
             android:id="@+id/btAgregarInmueble"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/button_background"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
@@ -192,6 +188,7 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btAgregarFoto" />
 

@@ -15,7 +15,11 @@
         android:id="@+id/nav_perfil"
         android:name="com.example.inmobiliarialabiii.ui.perfil.PerfilFragment"
         android:label="@string/perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_actualizarClaveFragment"
+            app:destination="@id/actualizarClaveFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_inquilinos"
@@ -99,5 +103,14 @@
         <action
             android:id="@+id/action_pagosFragment_to_detalleContratoFragment"
             app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarClaveFragment"
+        android:name="com.example.inmobiliarialabiii.ui.perfil.ActualizarClaveFragment"
+        android:label="fragment_actualizar_clave"
+        tools:layout="@layout/fragment_actualizar_clave" >
+        <action
+            android:id="@+id/action_actualizarClaveFragment_to_nav_perfil"
+            app:destination="@id/nav_perfil" />
     </fragment>
 </navigation>

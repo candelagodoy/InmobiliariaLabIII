@@ -11,8 +11,8 @@
     app:cardBackgroundColor="#FFF8F6F4">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="258dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
 

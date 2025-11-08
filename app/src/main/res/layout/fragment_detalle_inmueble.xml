@@ -8,7 +8,7 @@
     tools:context=".ui.inmuebles.DetalleInmuebleFragment"
     android:background="@drawable/inmobi">
 
-    <!-- ID -->
+
     <LinearLayout
         android:id="@+id/llId"
         android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Dirección -->
+
     <LinearLayout
         android:id="@+id/llDireccion"
         android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Uso -->
+
     <LinearLayout
         android:id="@+id/llUso"
         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Ambientes -->
+
     <LinearLayout
         android:id="@+id/llAmbientes"
         android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Latitud y Longitud -->
+
     <LinearLayout
         android:id="@+id/llLatitud"
         android:layout_width="wrap_content"
@@ -193,7 +193,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Valor -->
+
     <LinearLayout
         android:id="@+id/llValor"
         android:layout_width="wrap_content"
@@ -224,7 +224,7 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- Disponible -->
+
     <CheckBox
         android:id="@+id/checkDisponible"
         android:layout_width="wrap_content"
@@ -239,7 +239,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Imagen con esquinas redondeadas -->
+
     <androidx.cardview.widget.CardView
         android:layout_width="275dp"
         android:layout_height="210dp"
@@ -248,7 +248,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"> <!-- Sombra -->
+        app:cardElevation="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgInmuebleD"

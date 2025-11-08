@@ -10,7 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.example.inmobiliarialabiii.R;
 import com.example.inmobiliarialabiii.databinding.FragmentLogoutBinding;
 import com.example.inmobiliarialabiii.databinding.FragmentPerfilBinding;
 import com.example.inmobiliarialabiii.model.Propietario;
@@ -85,6 +87,13 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        binding.btCambiarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main)
+                        .navigate(R.id.actualizarClaveFragment);
+            }
+        });
 
         return binding.getRoot();
     }
