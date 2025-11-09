@@ -90,6 +90,12 @@ public class ApiClient {
         Call<List<Pago>>obtenerPagos(@Header("Authorization")String token,
                                      @Path("id")int id);
 
+        @FormUrlEncoded
+        @PUT("api/Propietarios/changePassword")
+        Call<Void> cambiarClave(@Header("Authorization") String token, @Field("currentPassword")
+            String claveAntigua, @Field("newPassword") String claveNueva);
+
+
     }
 
 }

@@ -21,6 +21,9 @@ import com.example.inmobiliarialabiii.databinding.FragmentDetalleInquilinoBindin
 import com.example.inmobiliarialabiii.model.Contrato;
 import com.example.inmobiliarialabiii.ui.inquilinos.DetalleInquilinoViewModel;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class DetalleContratoFragment extends Fragment {
 
     private DetalleContratoViewModel mViewModel;
@@ -40,8 +43,16 @@ public class DetalleContratoFragment extends Fragment {
             @Override
             public void onChanged(Contrato contrato) {
                 binding.tvCodContrato.setText(contrato.getIdContrato()+"");
-                binding.tvFechaInicio.setText(contrato.getFechaInicio());
-                binding.tvFechaFin.setText(contrato.getFechaFinalizacion());
+                DateTimeFormatter inFmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                DateTimeFormatter outFmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                try {
+                    binding.tvFechaInicio.setText(LocalDate.parse(contrato.getFechaInicio(), inFmt).format(outFmt));
+                    binding.tvFechaFin.setText(LocalDate.parse(contrato.getFechaFinalizacion(), inFmt).format(outFmt));
+                } catch (Exception e) {
+                    binding.tvFechaInicio.setText(contrato.getFechaInicio());
+                    binding.tvFechaFin.setText(contrato.getFechaFinalizacion());
+                }
+
                 binding.tvMontoAlquiler.setText((int) contrato.getMontoAlquiler()+"");
                 binding.tvInquilino.setText(contrato.getInquilino().getNombre());
                 binding.tvInmueble.setText(contrato.getInmueble().getDireccion());

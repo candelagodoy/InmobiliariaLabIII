@@ -36,12 +36,17 @@ import retrofit2.Response;
 public class CargarInmuebleViewModel extends AndroidViewModel {
 
     private MutableLiveData<Uri> mUri= new MutableLiveData<>();
+    private MutableLiveData<String> mMensaje = new MutableLiveData<>();
     public CargarInmuebleViewModel(@NonNull Application application) {
         super(application);
     }
 
     public LiveData<Uri> getMUri(){
         return mUri;
+    }
+
+    public LiveData<String> getMMensaje(){
+        return mMensaje;
     }
 
     public void recibirFoto(ActivityResult result){
@@ -57,21 +62,19 @@ public class CargarInmuebleViewModel extends AndroidViewModel {
                                String ambientes, String superficie, boolean disponible){
         int superficiePars, ambientesPars;
         double valorPars;
-
+        mMensaje.setValue("");
         try {
             valorPars = Double.parseDouble(valor);
             superficiePars = Integer.parseInt(superficie);
             ambientesPars = Integer.parseInt(ambientes);
             if(direccion.isBlank() || tipo.isBlank() || valor.isBlank() || uso.isBlank() ||
                     ambientes.isBlank() || superficie.isBlank()){
-                Toast.makeText(getApplication(), "No debe haber campos vacios",
-                        Toast.LENGTH_SHORT).show();
+                mMensaje.setValue("No debe haber campos vacios");
                 return;
             }
 
             if(mUri.getValue() == null){
-                Toast.makeText(getApplication(), "Debe agregar una foto",
-                        Toast.LENGTH_SHORT).show();
+                mMensaje.setValue("Debe agregar una foto");
                 return;
             }
 
@@ -103,25 +106,20 @@ public class CargarInmuebleViewModel extends AndroidViewModel {
                 @Override
                 public void onResponse(Call<Inmueble> call, Response<Inmueble> response) {
                     if(response.isSuccessful()){
-                        Toast.makeText(getApplication(), "Inmueble cargado exitosamente",
-                                Toast.LENGTH_LONG).show();
+                        mMensaje.postValue("Inmueble cargado exitosamente");
                     }else{
-                        Toast.makeText(getApplication(), "Error al cargar inmueble ",
-                                Toast.LENGTH_LONG).show();
+                        mMensaje.postValue("Error al cargar inmueble ");
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Inmueble> call, Throwable t) {
-                    Toast.makeText(getApplication(), "Error de servidor",
-                            Toast.LENGTH_LONG).show();
+                    mMensaje.postValue("Error en el servidor");
                 }
             });
 
-
-
         }catch (NumberFormatException nfe){
-
+            mMensaje.postValue("Debe ingresar números en los campos de valor, superficie, ambientes y coordenadas");
         }
 
     }
@@ -136,7 +134,7 @@ public class CargarInmuebleViewModel extends AndroidViewModel {
             return byteArratInputStream.toByteArray();
 
         }catch (FileNotFoundException er){
-            Toast.makeText(getApplication(), "No ha seleccionado una foto", Toast.LENGTH_SHORT).show();
+            mMensaje.setValue("No ha seleccionado una foto");
             return new byte[]{};
         }
     }

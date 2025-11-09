@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,84 +8,229 @@
     android:background="@drawable/inmobi"
     tools:context=".ui.contratos.DetalleContratoFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/llCodContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoCodContrato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvCodContrato"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:hint="CODIGO DE CONTRATO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFechaInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llCodContrato"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoFechaInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicio:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvFechaInicio"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="FECHA DE INICIO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCodContrato" />
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFechaFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llFechaInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoFechaFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fin:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvFechaFin"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="FECHA FIN"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFechaInicio" />
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMontoAlquiler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llFechaFin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoMonto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monto:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvMontoAlquiler"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="MONTO DE ALQUILER"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFechaFin" />
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llInquilino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llMontoAlquiler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoInquilino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inquilino:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvInquilino"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="NOMBRE INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMontoAlquiler" />
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llInmueble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llInquilino"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoInmueble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inmueble:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvInmueble"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:hint="INMUEBLE"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvInquilino" />
-
-        <Button
-            android:id="@+id/btPagos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="Ver pagos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvInmueble" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btPagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver pagos"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFA726"
+        app:layout_constraintTop_toBottomOf="@id/llInmueble"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

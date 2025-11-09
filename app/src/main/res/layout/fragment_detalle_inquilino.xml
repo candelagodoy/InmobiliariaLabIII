@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,63 +9,183 @@
     tools:context=".ui.inquilinos.DetalleInquilinoFragment">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/llNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvNombreInquilino"
-            android:layout_width="409dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="72dp"
-            android:hint="NOMBRE INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvApellidoInquilino"
-            android:layout_width="412dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="24dp"
-            android:hint="APELLIDO INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNombreInquilino" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llDni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llApellido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvDniInquilino"
-            android:layout_width="413dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="20dp"
-            android:hint="DNI INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvApellidoInquilino" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llDni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvTelefonoInquilino"
-            android:layout_width="414dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="16dp"
-            android:hint="TELEFONO INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDniInquilino" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/llTelefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvInfoEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="@color/grey2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:shadowColor="#33FFA726"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:background="@drawable/bg_sutil_naranja"/>
 
         <TextView
             android:id="@+id/tvEmailInquilino"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="EMAIL INQUILINO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTelefonoInquilino" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            android:textColor="@color/grey2"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

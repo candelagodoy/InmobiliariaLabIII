@@ -52,7 +52,6 @@ public class ContratosFragment extends Fragment {
 
         mViewModel.leerInmuebleConContrato();
 
-
         return binding.getRoot();
     }
 

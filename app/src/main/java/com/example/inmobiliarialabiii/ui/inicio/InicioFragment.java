@@ -30,13 +30,8 @@ public class InicioFragment extends Fragment {
         mViewModel.getMMapaActual().observe(getViewLifecycleOwner(), new Observer<InicioViewModel.MapaActual>() {
             @Override
             public void onChanged(InicioViewModel.MapaActual mapaActual) {
-                //SupportMapFragment supportMapFragment =(SupportMapFragment)getParentFragmentManager().findFragmentById(R.id.maps);
-                /*SupportMapFragment supportMapFragment =
-                        (SupportMapFragment) requireActivity().getSupportFragmentManager()
-                                .findFragmentById(R.id.maps);*/
                 SupportMapFragment supportMapFragment =
                         (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.maps);
-
 
                 supportMapFragment.getMapAsync(mapaActual);
 

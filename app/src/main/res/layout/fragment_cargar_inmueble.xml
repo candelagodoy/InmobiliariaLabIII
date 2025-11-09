@@ -139,7 +139,7 @@
             android:id="@+id/cbDisponible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:buttonTint="@color/grey2"
             android:text="Disponible"
             android:textColor="@color/grey2"
@@ -165,7 +165,7 @@
             android:layout_width="185dp"
             android:layout_height="48dp"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/button_background"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
@@ -191,6 +191,16 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btAgregarFoto" />
+
+        <TextView
+            android:id="@+id/tvMensajeCargar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivInmueble" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

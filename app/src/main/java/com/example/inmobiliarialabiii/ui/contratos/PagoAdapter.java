@@ -13,6 +13,9 @@ import com.example.inmobiliarialabiii.R;
 import com.example.inmobiliarialabiii.model.Inmueble;
 import com.example.inmobiliarialabiii.model.Pago;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 public class PagoAdapter extends RecyclerView.Adapter<PagoAdapter.PagoViewHolder> {
@@ -37,7 +40,16 @@ public class PagoAdapter extends RecyclerView.Adapter<PagoAdapter.PagoViewHolder
         Pago pagoActual = lista.get(position);
         holder.tvCodigoP.setText(String.valueOf(pagoActual.getIdPago()));
         holder.tvImporte.setText(String.valueOf(pagoActual.getMonto()));
-        holder.tvFecha.setText(pagoActual.getFechaPago());
+        String fechaOriginal = pagoActual.getFechaPago();
+        try {
+            LocalDate fecha = LocalDate.parse(fechaOriginal);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String fechaFormateada = fecha.format(formatter);
+            holder.tvFecha.setText(fechaFormateada);
+        } catch (Exception e) {
+            holder.tvFecha.setText(fechaOriginal); // si hay error, muestra la original
+        }
+
         holder.tvCodigoC.setText(String.valueOf(pagoActual.getIdContrato()));
 
     }

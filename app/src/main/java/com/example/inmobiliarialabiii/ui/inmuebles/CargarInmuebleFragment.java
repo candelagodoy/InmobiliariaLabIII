@@ -53,6 +53,13 @@ public class CargarInmuebleFragment extends Fragment {
             }
         });
 
+        mViewModel.getMMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                binding.tvMensajeCargar.setText(s);
+            }
+        });
+
         mViewModel.getMUri().observe(getViewLifecycleOwner(), new Observer<Uri>() {
             @Override
             public void onChanged(Uri uri) {

@@ -21,6 +21,7 @@ import retrofit2.Response;
 public class ContratosViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Inmueble>> mInmuebleContratos = new MutableLiveData<>();
+
     public ContratosViewModel(@NonNull Application application) {
         super(application);
     }
@@ -28,6 +29,8 @@ public class ContratosViewModel extends AndroidViewModel {
     public LiveData<List<Inmueble>> getMImuebleInquilinos() {
         return mInmuebleContratos;
     }
+
+
 
     public void leerInmuebleConContrato(){
         String token = ApiClient.leerToken(getApplication());

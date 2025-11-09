@@ -34,6 +34,13 @@ public class DetalleInmuebleFragment extends Fragment {
         binding = FragmentDetalleInmuebleBinding.inflate(inflater, container, false);;
         mViewModel = new ViewModelProvider(this).get(DetalleInmuebleViewModel.class);
 
+        mViewModel.getMMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                binding.tvMensajeEstadoInmueble.setText(s);
+            }
+        });
+
         mViewModel.getMInmueble().observe(getViewLifecycleOwner(), inmueble -> {
                 binding.tvIdInmueble.setText(inmueble.getIdInmueble()+ "");
                 binding.tvDireccionI.setText(inmueble.getDireccion());

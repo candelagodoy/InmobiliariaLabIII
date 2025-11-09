@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/detalleInmuebleFragment"
         android:name="com.example.inmobiliarialabiii.ui.inmuebles.DetalleInmuebleFragment"
-        android:label="fragment_detalle_inmueble"
+        android:label="Detalles del inmueble"
         tools:layout="@layout/fragment_detalle_inmueble" >
         <action
             android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/cargarInmuebleFragment"
         android:name="com.example.inmobiliarialabiii.ui.inmuebles.CargarInmuebleFragment"
-        android:label="fragment_cargar_inmueble"
+        android:label="Cargar un nuevo inmueble"
         tools:layout="@layout/fragment_cargar_inmueble" >
         <action
             android:id="@+id/action_cargarInmuebleFragment_to_nav_inmuebles"
@@ -77,7 +77,7 @@
     <fragment
         android:id="@+id/detalleInquilinoFragment"
         android:name="com.example.inmobiliarialabiii.ui.inquilinos.DetalleInquilinoFragment"
-        android:label="fragment_detalle_inquilino"
+        android:label="Detalle del inquilino"
         tools:layout="@layout/fragment_detalle_inquilino" >
         <action
             android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilinos"
@@ -86,7 +86,7 @@
     <fragment
         android:id="@+id/detalleContratoFragment"
         android:name="com.example.inmobiliarialabiii.ui.contratos.DetalleContratoFragment"
-        android:label="fragment_detalle_contrato"
+        android:label="Detalle del contrato"
         tools:layout="@layout/fragment_detalle_contrato" >
         <action
             android:id="@+id/action_detalleContratoFragment_to_nav_contratos"
@@ -98,7 +98,7 @@
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.inmobiliarialabiii.ui.contratos.PagosFragment"
-        android:label="fragment_pagos"
+        android:label="Pagos"
         tools:layout="@layout/fragment_pagos" >
         <action
             android:id="@+id/action_pagosFragment_to_detalleContratoFragment"
@@ -107,7 +107,7 @@
     <fragment
         android:id="@+id/actualizarClaveFragment"
         android:name="com.example.inmobiliarialabiii.ui.perfil.ActualizarClaveFragment"
-        android:label="fragment_actualizar_clave"
+        android:label="Actualizar clave"
         tools:layout="@layout/fragment_actualizar_clave" >
         <action
             android:id="@+id/action_actualizarClaveFragment_to_nav_perfil"

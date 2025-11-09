@@ -45,14 +45,14 @@ public class InicioViewModel extends AndroidViewModel {
         public void onMapReady(@NonNull GoogleMap googleMap) {
             MarkerOptions marcadorSanLuis = new MarkerOptions();
             marcadorSanLuis.position(sanluis);
-            marcadorSanLuis.title("San Luis");
+            marcadorSanLuis.title("sanluis");
 
             googleMap.addMarker(marcadorSanLuis);
             googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
             CameraPosition cameraPosition = new CameraPosition
                     .Builder()
                     .target(sanluis)
-                    .zoom(30)
+                    .zoom(25)
                     .bearing(45)
                     .tilt(15)
                     .build();

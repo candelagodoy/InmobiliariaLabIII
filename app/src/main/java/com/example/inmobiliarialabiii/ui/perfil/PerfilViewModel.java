@@ -100,7 +100,6 @@ public class PerfilViewModel extends AndroidViewModel {
                 @Override
                 public void onFailure(Call<Propietario> call, Throwable t) {
                     mMensaje.postValue("Error de servidor");
-                    Log.d("Error", t.getMessage());
                 }
             });
 
