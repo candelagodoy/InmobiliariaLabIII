@@ -46,7 +46,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        vModel.activarLecturas();
+
        setContentView(binding.getRoot());
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        vModel.desactivarLecturas();
     }
 }
